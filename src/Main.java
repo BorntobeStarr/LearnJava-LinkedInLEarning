@@ -11,7 +11,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
-
+       //Calling the function
+        announceDeveloperTeaTime();
+        //randome code
+        System.out.println("code");
+        //Calling the function again to show you can use it multiple times
+        announceDeveloperTeaTime();
     }
 }
