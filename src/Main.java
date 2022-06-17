@@ -2,22 +2,20 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static double calculateTotalMealPrice (double listedMealPrice,
-                                               double tipRate,
-                                               double taxRate) {
-       double tip = tipRate * listedMealPrice;
-       double tax = taxRate * listedMealPrice;
-       double result = listedMealPrice + tip + tax;
-       return result;
+    public static double calculateAnnualSalary (double hoursPerWeek, double amountPerHour, double vacationDays ) {
+
+        double weeklyPay = hoursPerWeek * amountPerHour;
+        double yearlySalary = weeklyPay * 52;
+        double accountingForVacationDays = (vacationDays * 8) *amountPerHour;
+        double grossSalary =  yearlySalary - accountingForVacationDays;
+        return grossSalary;
     }
 
+
+
     public static void main(String[] args) {
-
-            double groupTotalMealPrice = calculateTotalMealPrice(100, .20, .08);
-            System.out.println("Here is the total of the group's meal $" + groupTotalMealPrice);
-
-            double individualTotalMealPrice = groupTotalMealPrice/5;
-            System.out.println("Each person needs to pay $" + individualTotalMealPrice);
+        double myGrossSalary = calculateAnnualSalary(40, 10, 10);
+        System.out.println("Your gross salary including vacation days is $" + myGrossSalary );
 
     }
 }
