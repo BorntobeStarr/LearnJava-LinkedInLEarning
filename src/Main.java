@@ -2,20 +2,16 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void announceDeveloperTeaTime() {
-        System.out.println("Waiting for developer tea time ");
-        System.out.println("type a random word and press enter to start dev tea time ");
-        Scanner input = new Scanner(System.in);
-        input.next();
-        System.out.println("It's developer tea time ");
+    public static void calculateTotalMealPrice (double listedMealPrice,
+                                               double tipRate,
+                                               double taxRate) {
+       double tip = tipRate * listedMealPrice;
+       double tax = taxRate * listedMealPrice;
+       double result = listedMealPrice + tip + tax;
+       System.out.println("your total meal price is $" + result);
     }
 
     public static void main(String[] args) {
-       //Calling the function
-        announceDeveloperTeaTime();
-        //randome code
-        System.out.println("code");
-        //Calling the function again to show you can use it multiple times
-        announceDeveloperTeaTime();
+            calculateTotalMealPrice(15, .20, .08);
     }
 }
