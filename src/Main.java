@@ -1,21 +1,24 @@
-import java.util.Scanner;
-
 public class Main {
 
-    public static double calculateAnnualSalary (double hoursPerWeek, double amountPerHour, double vacationDays ) {
+    public static double salaryCalculator(double hoursPerWeek,
+                                          double amountPerHour,
+                                          int vacationDays) {
+        if (hoursPerWeek < 0) {
+            return -1;
+        }
 
-        double weeklyPay = hoursPerWeek * amountPerHour;
-        double yearlySalary = weeklyPay * 52;
-        double accountingForVacationDays = (vacationDays * 8) *amountPerHour;
-        double grossSalary =  yearlySalary - accountingForVacationDays;
-        return grossSalary;
+        if (amountPerHour < 0) {
+            return -1;
+        }
+
+        double weeklyPaycheck = hoursPerWeek * amountPerHour;
+        double unpaidTime = vacationDays * amountPerHour * 8;
+        return (weeklyPaycheck * 52) - unpaidTime;
     }
-
-
 
     public static void main(String[] args) {
-        double myGrossSalary = calculateAnnualSalary(40, 10, 10);
-        System.out.println("Your gross salary including vacation days is $" + myGrossSalary );
-
+        double salary = salaryCalculator(40, 15, 8);
+        System.out.println(salary);
     }
+
 }
